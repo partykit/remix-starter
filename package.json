@@ -1,0 +1,34 @@
+{
+  "name": "@partykit/examples-remix",
+  "description": "🎈 PartyKit ⤫ Remix 💿",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "dev": "remix dev --manual -c \"npm start\" --port 8002",
+    "build": "remix build",
+    "start": "partykit dev",
+    "deploy": "npm run build && partykit deploy"
+  },
+  "dependencies": {
+    "@remix-run/css-bundle": "^1.19.3",
+    "@remix-run/react": "^1.19.3",
+    "isbot": "^3.6.13",
+    "partymix": "^0.0.0-7608f89",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.19.3",
+    "@remix-run/eslint-config": "^1.19.3",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.0.11",
+    "concurrently": "^8.2.1",
+    "eslint": "^8.47.0",
+    "partykit": "^0.0.0-7608f89",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18.17.1"
+  }
+}

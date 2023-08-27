@@ -36,7 +36,7 @@ export default class MyRemix implements PartyServer {
     for (const connection of this.party.getConnections()) {
       const { from } = connection.deserializeAttachment();
       this.state = {
-        total: this.state?.total ?? 0 + 1,
+        total: (this.state?.total ?? 0) + 1,
         from: {
           ...this.state?.from,
           [from]: (this.state?.from[from] ?? 0) + 1,

@@ -1,6 +1,11 @@
 {
   "name": "partymix-example",
+  // remix compiles our actual entry point (party/main.ts) to build/index.js
   "main": "build/index.js",
+  "parties": {
+    // we also have a sub party that we use just for geo presence
+    "geo": "party/geo.ts"
+  },
   "serve": "public",
   "define": {
     "process.env.REMIX_DEV_ORIGIN": "'http://127.0.0.1:8002'",

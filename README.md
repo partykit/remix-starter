@@ -1,7 +1,15 @@
 # Welcome to 🎈 PartyKit ⤫ Remix 💿!
 
+This is a starter template for [Remix](https://remix.run) and [PartyKit](https://partykit.io). You can create a new project based on this template with the Remix CLI:
+
+```sh
+npx create-remix@latest ./my-partymix-app --template partykit/remix-starter
+```
+
 - [Remix Docs](https://remix.run/docs)
-- [PartyKit Docs](https://docs.partykit.io)
+- [PartyKit Docs](https://github.com/partykit/partykit)
+
+_NB: This is a **beta** release, so expect some rough edges. Please file issues or feedback at https://github.com/partykit/remix-starter!_
 
 ## Development
 

@@ -1,7 +1,7 @@
 /** @type {import('@remix-run/dev').AppConfig} */
 export default {
   ignoredRouteFiles: ["**/.*"],
-  server: "./app/server.ts",
+  server: "./party/main.ts",
   serverConditions: ["partykit", "workerd", "worker", "browser"],
   serverMainFields: ["browser", "module", "main"],
   serverModuleFormat: "esm",

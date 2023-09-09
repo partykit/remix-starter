@@ -4,20 +4,11 @@
 
 import type { State } from "../messages";
 
-import type {
-  Party,
-  PartyConnection,
-  PartyConnectionContext,
-  PartyServer,
-  PartyWorker,
-} from "partykit/server";
+import type * as Party from "partykit/server";
 
-export default class MyRemix implements PartyServer {
-  // save a reference to the party
-  party: Party;
-  constructor(party: Party) {
-    this.party = party;
-  }
+export default class MyRemix implements Party.Server {
+  // eslint-disable-next-line no-useless-constructor
+  constructor(public party: Party.Party) {}
 
   // we'll store the state in memory
   state: State;
@@ -47,8 +38,8 @@ export default class MyRemix implements PartyServer {
 
   // This is called every time a new connection is made
   async onConnect(
-    connection: PartyConnection,
-    ctx: PartyConnectionContext
+    connection: Party.Connection,
+    ctx: Party.ConnectionContext
   ): Promise<void> {
     // Let's read the country from the request context
     const from = (ctx.request.cf?.country ?? "unknown") as string;
@@ -68,7 +59,7 @@ export default class MyRemix implements PartyServer {
   }
 
   // This is called every time a connection is closed
-  async onClose(connection: PartyConnection): Promise<void> {
+  async onClose(connection: Party.Connection): Promise<void> {
     // let's update our state
     // first let's read the country from the connection attachment
     const { from } = connection.deserializeAttachment();
@@ -85,7 +76,7 @@ export default class MyRemix implements PartyServer {
   }
 
   // This is called when a connection has an error
-  async onError(connection: PartyConnection, err: Error): Promise<void> {
+  async onError(connection: Party.Connection, err: Error): Promise<void> {
     // let's log the error
     console.error(err);
     // and close the connection
@@ -93,4 +84,4 @@ export default class MyRemix implements PartyServer {
   }
 }
 
-MyRemix satisfies PartyWorker;
+MyRemix satisfies Party.Worker;

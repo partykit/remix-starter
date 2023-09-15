@@ -7,7 +7,7 @@ npx create-remix@latest ./my-partymix-app --template partykit/remix-starter
 ```
 
 - [Remix Docs](https://remix.run/docs)
-- [PartyKit Docs](https://github.com/partykit/partykit)
+- [PartyKit Docs](https://docs.partykit.io/)
 
 _NB: This is a **beta** release, so expect some rough edges. Please file issues or feedback at https://github.com/partykit/remix-starter!_
 

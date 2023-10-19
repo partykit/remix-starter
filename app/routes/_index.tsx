@@ -1,5 +1,5 @@
 import { useLoaderData } from "@remix-run/react";
-import type { V2_MetaFunction } from "partymix";
+import type { MetaFunction } from "partymix";
 import WhosHere from "../components/whos-here";
 
 // PartyKit will inject the host into the server bundle
@@ -9,7 +9,7 @@ export function loader() {
   return { partykitHost: PARTYKIT_HOST };
 }
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return [
     { title: "New Partymix App" },
     { name: "description", content: "Welcome to Remix!" },

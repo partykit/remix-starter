@@ -7,26 +7,27 @@
   "scripts": {
     "dev": "remix dev --manual -c \"npm start\" --port 8002",
     "build": "rimraf build && rimraf public/build && remix build",
+    "check": "tsc --noEmit",
     "start": "partykit dev",
     "deploy": "npm run build && partykit deploy"
   },
   "dependencies": {
-    "@remix-run/css-bundle": "^2.1.0",
-    "@remix-run/react": "^2.1.0",
+    "@remix-run/css-bundle": "^2.2.0",
+    "@remix-run/react": "^2.2.0",
     "isbot": "^3.7.0",
-    "partymix": "^0.0.5",
-    "partysocket": "0.0.12",
+    "partymix": "^0.0.6",
+    "partysocket": "0.0.14",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.1.0",
-    "@remix-run/eslint-config": "^2.1.0",
-    "@types/react": "^18.2.29",
+    "@remix-run/dev": "^2.2.0",
+    "@remix-run/eslint-config": "^2.2.0",
+    "@types/react": "^18.2.36",
     "@types/react-dom": "^18.2.14",
     "concurrently": "^8.2.2",
-    "eslint": "^8.51.0",
-    "partykit": "^0.0.32",
+    "eslint": "^8.53.0",
+    "partykit": "^0.0.34",
     "rimraf": "^5.0.5",
     "typescript": "^5.2.2"
   },

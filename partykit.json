@@ -2,7 +2,7 @@
   "name": "partymix-example",
   // remix compiles our actual entry point (party/main.ts) to build/index.js
   "main": "build/index.js",
-  "compatibilityDate": "2023-10-14",
+  "compatibilityDate": "2023-12-22",
   "parties": {
     // we also have a sub party that we use just for geo presence
     "geo": "party/geo.ts"

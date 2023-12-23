@@ -6,4 +6,6 @@ export default {
   serverMainFields: ["browser", "module", "main"],
   serverModuleFormat: "esm",
   serverPlatform: "neutral",
+  tailwind: true,
+  postcss: true,
 };

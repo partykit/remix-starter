@@ -12,22 +12,22 @@
     "deploy": "npm run build && partykit deploy"
   },
   "dependencies": {
-    "@remix-run/css-bundle": "^2.4.0",
-    "@remix-run/react": "^2.4.0",
+    "@remix-run/css-bundle": "^2.4.1",
+    "@remix-run/react": "^2.4.1",
     "isbot": "^4.1.0",
-    "partymix": "^0.0.10",
+    "partymix": "^0.0.11",
     "partysocket": "0.0.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.4.0",
-    "@remix-run/eslint-config": "^2.4.0",
+    "@remix-run/dev": "^2.4.1",
+    "@remix-run/eslint-config": "^2.4.1",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
     "concurrently": "^8.2.2",
     "eslint": "^8.56.0",
-    "partykit": "^0.0.50",
+    "partykit": "^0.0.53",
     "rimraf": "^5.0.5",
     "typescript": "^5.3.3"
   },

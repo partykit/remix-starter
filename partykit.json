@@ -1,4 +1,5 @@
 {
+  "$schema": "https://www.partykit.io/schema.json",
   "name": "partymix-example",
   // remix compiles our actual entry point (party/main.ts) to build/index.js
   "main": "build/index.js",

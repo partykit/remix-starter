@@ -1,12 +1,12 @@
 import usePartySocket from "partysocket/react";
 import { useState } from "react";
-import type { Message, State } from "../../messages.d";
+import type { State } from "../../messages.d";
 import countryCodeEmoji from "./country-code-emoji";
 
 // This is a component that will connect to the partykit backend
 // and display the number of connected users, and where they're from.
 export default function WhosHere(props: { host: string }) {
-  const [users, setUsers] = useState<State>();
+  const [users, setUsers] = useState<State | undefined>();
 
   usePartySocket({
     host: props.host,
@@ -15,7 +15,7 @@ export default function WhosHere(props: { host: string }) {
     // this can be any name, we just picked 'index'
     room: "index",
     onMessage(evt) {
-      const data = JSON.parse(evt.data) as Message;
+      const data = JSON.parse(evt.data) as State;
       setUsers(data);
     },
   });

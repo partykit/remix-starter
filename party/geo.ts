@@ -8,10 +8,13 @@ import type * as Party from "partykit/server";
 
 export default class MyRemix implements Party.Server {
   // eslint-disable-next-line no-useless-constructor
-  constructor(public party: Party.Party) {}
+  constructor(public room: Party.Room) {}
 
   // we'll store the state in memory
-  state: State;
+  state: State = {
+    total: 0,
+    from: {},
+  };
   // let's opt in to hibernation mode, for much higher concurrency
   // like, 1000s of people in a room 🤯
   // This has tradeoffs for the developer, like needing to hydrate/rehydrate
@@ -24,13 +27,13 @@ export default class MyRemix implements Party.Server {
   // since we're using hibernation mode, we should
   // "rehydrate" this.state here from all connections
   onStart(): void | Promise<void> {
-    for (const connection of this.party.getConnections<{ from: string }>()) {
+    for (const connection of this.room.getConnections<{ from: string }>()) {
       const from = connection.state!.from;
       this.state = {
-        total: (this.state?.total ?? 0) + 1,
+        total: this.state.total + 1,
         from: {
-          ...this.state?.from,
-          [from]: (this.state?.from[from] ?? 0) + 1,
+          ...this.state.from,
+          [from]: (this.state.from[from] ?? 0) + 1,
         },
       };
     }
@@ -45,17 +48,17 @@ export default class MyRemix implements Party.Server {
     const from = (ctx.request.cf?.country ?? "unknown") as string;
     // and update our state
     this.state = {
-      total: (this.state?.total ?? 0) + 1,
+      total: this.state.total + 1,
       from: {
-        ...this.state?.from,
-        [from]: (this.state?.from[from] ?? 0) + 1,
+        ...this.state.from,
+        [from]: (this.state.from[from] ?? 0) + 1,
       },
     };
     // let's also store where we're from on the connection
     // so we can hydrate state on start, as well as reference it on close
     connection.setState({ from });
     // finally, let's broadcast the new state to all connections
-    this.party.broadcast(JSON.stringify(this.state));
+    this.room.broadcast(JSON.stringify(this.state));
   }
 
   // This is called every time a connection is closed
@@ -65,14 +68,14 @@ export default class MyRemix implements Party.Server {
     const from = connection.state!.from;
     // and update our state
     this.state = {
-      total: (this.state?.total ?? 0) - 1,
+      total: this.state.total - 1,
       from: {
-        ...this.state?.from,
-        [from]: (this.state?.from[from] ?? 0) - 1,
+        ...this.state.from,
+        [from]: (this.state.from[from] ?? 0) - 1,
       },
     };
     // finally, let's broadcast the new state to all connections
-    this.party.broadcast(JSON.stringify(this.state));
+    this.room.broadcast(JSON.stringify(this.state));
   }
 
   // This is called when a connection has an error

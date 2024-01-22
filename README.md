@@ -3,7 +3,7 @@
 This is a starter template for [Remix](https://remix.run) and [PartyKit](https://partykit.io). You can create a new project based on this template with the Remix CLI:
 
 ```sh
-npx create-remix@latest ./my-partymix-app --template partykit/remix-starter
+npx create-remix@latest --template partykit/remix-starter
 ```
 
 - [Remix Docs](https://remix.run/docs)

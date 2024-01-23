@@ -5,7 +5,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "remix dev --manual -c \"npm start\" --port 8002",
+    "dev": "remix dev --manual -c \"npm start\"",
     "build": "rimraf build && rimraf public/build && remix build",
     "check": "tsc --noEmit",
     "start": "partykit dev",
@@ -16,7 +16,7 @@
     "@remix-run/react": "^2.5.1",
     "isbot": "^4.4.0",
     "partymix": "^0.0.12",
-    "partysocket": "0.0.22",
+    "partysocket": "0.0.23",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -27,7 +27,7 @@
     "@types/react-dom": "^18.2.18",
     "concurrently": "^8.2.2",
     "eslint": "^8.56.0",
-    "partykit": "^0.0.75",
+    "partykit": "^0.0.76",
     "rimraf": "^5.0.5",
     "typescript": "^5.3.3"
   },

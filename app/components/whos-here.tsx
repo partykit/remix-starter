@@ -5,11 +5,10 @@ import countryCodeEmoji from "./country-code-emoji";
 
 // This is a component that will connect to the partykit backend
 // and display the number of connected users, and where they're from.
-export default function WhosHere(props: { host: string }) {
+export default function WhosHere() {
   const [users, setUsers] = useState<State | undefined>();
 
   usePartySocket({
-    host: props.host,
     // connect to the party defined by 'geo.ts'
     party: "geo",
     // this can be any name, we just picked 'index'

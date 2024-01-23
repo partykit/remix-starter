@@ -16,7 +16,7 @@
     "@remix-run/react": "^2.5.1",
     "isbot": "^4.4.0",
     "partymix": "^0.0.12",
-    "partysocket": "0.0.23",
+    "partysocket": "0.0.24",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

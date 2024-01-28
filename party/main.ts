@@ -11,7 +11,7 @@ if (process.env.NODE_ENV === "development") {
 // create a request handler for remix
 const handleRequest = createRequestHandler({ build });
 
-// This "main" party server simnply handles all regular http requests
+// This "main" party server simply handles all regular http requests
 export default class MyRemix implements Party.Server {
   static onFetch(
     request: Party.Request,

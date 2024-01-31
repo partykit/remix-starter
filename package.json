@@ -27,7 +27,7 @@
     "@types/react-dom": "^18.2.18",
     "concurrently": "^8.2.2",
     "eslint": "^8.56.0",
-    "partykit": "^0.0.79",
+    "partykit": "^0.0.81",
     "rimraf": "^5.0.5",
     "typescript": "^5.3.3"
   },
